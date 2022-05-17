@@ -1,6 +1,7 @@
-package com.example.chess;
+package com.example.chess.Controllers;
 
 import com.example.chess.MainApp;
+import com.example.chess.Models.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -38,6 +39,11 @@ public class MenuController {
     @FXML
     private void startLocalGame(MouseEvent event) throws IOException {
         startGameScene(event);
+
+        Player firstPlayer = new Player();
+        Player secondPlayer = new Player();
+
+        PlayFieldController.startGame(firstPlayer, secondPlayer);
     }
 
     private void startGameScene(MouseEvent event) throws IOException {

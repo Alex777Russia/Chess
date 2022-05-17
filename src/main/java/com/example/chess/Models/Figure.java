@@ -4,16 +4,14 @@ import javafx.scene.image.ImageView;
 
 public interface Figure {
 
-    ImageView figure = null;
+    enum Color {
+        WHITE,
+        BLACK
+    }
 
-    boolean canMakeMove(int row, int column);
+    public boolean canMakeMove(int row, int column);
 
-    void makeMove(int row, int column);
+    public void makeMove(int row, int column);
 
-    void kill();
-
-
-
-
-
+    public void kill();
 }
