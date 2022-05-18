@@ -14,25 +14,25 @@
       <GridPane prefHeight="642.0" prefWidth="641.0" StackPane.alignment="CENTER">
 
           <columnConstraints>
-          <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="86.25" prefWidth="86.25" />
-          <ColumnConstraints hgrow="NEVER" maxWidth="91.4" minWidth="80.25" prefWidth="85.4" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="108.80000000000001" minWidth="77.4" prefWidth="87.39999999999998" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="95.80000000000001" minWidth="64.0" prefWidth="84.19999999999999" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="96.40000000000003" minWidth="73.59999999999997" prefWidth="85.80000000000001" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="76.39999999999998" prefWidth="83.39999999999998" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="86.25" prefWidth="86.25" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="86.25" prefWidth="86.25" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.4" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.0" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.0" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
         </columnConstraints>
 
         <rowConstraints>
-          <RowConstraints maxHeight="142.2" minHeight="10.0" prefHeight="87.6" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="136.2" minHeight="10.0" prefHeight="85.4" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="135.0" minHeight="4.199992370605457" prefHeight="85.00000000000003" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="139.60000000000002" minHeight="10.0" prefHeight="86.19999999999999" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="216.19999999999996" minHeight="10.0" prefHeight="86.19999999999999" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="82.20000000000005" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="81.79999999999995" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="84.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
         </rowConstraints>
 
          <children>
@@ -47,10 +47,7 @@
                </children></StackPane>
             <StackPane GridPane.columnIndex="2">
                <children>
-                  <ImageView fx:id="black_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../images/test_image_for_figures.png" />
-                     </image></ImageView>
+                  <ImageView fx:id="black_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
             <StackPane GridPane.columnIndex="3">
                <children>
