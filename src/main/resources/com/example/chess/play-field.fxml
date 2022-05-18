@@ -38,182 +38,349 @@
          <children>
              <StackPane GridPane.columnIndex="0">
                <children>
-                  <ImageView fx:id="black_rook_1" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_rook_1" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
             <StackPane prefHeight="86.0" prefWidth="86.0" GridPane.columnIndex="1">
                <children>
-                  <ImageView fx:id="black_knight_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_knight_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
+
             <StackPane GridPane.columnIndex="2">
                <children>
-                  <ImageView fx:id="black_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
+
             <StackPane GridPane.columnIndex="3">
                <children>
-                  <ImageView fx:id="black_king" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_king" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
+
              <StackPane GridPane.columnIndex="4">
                <children>
-                  <ImageView fx:id="black_queen" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_queen" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
+
              <StackPane GridPane.columnIndex="5">
                <children>
-                  <ImageView fx:id="black_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
+
              <StackPane GridPane.columnIndex="6">
                <children>
-                  <ImageView fx:id="black_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
+
              <StackPane GridPane.columnIndex="7">
                <children>
-                  <ImageView fx:id="black_rook_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_rook_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
             <StackPane GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_pawn_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
-            <StackPane GridPane.rowIndex="2" />
-             <StackPane GridPane.rowIndex="3" />
-             <StackPane GridPane.rowIndex="4" />
-             <StackPane GridPane.rowIndex="5" />
+
+            <StackPane GridPane.rowIndex="2">
+               <children>
+                  <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+               </children></StackPane>
+
+             <StackPane GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
              <StackPane GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_pawn_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
+
              <StackPane GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_rook_1" fitHeight="86.0" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_rook_1" fitHeight="86.0" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_knight_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_knight_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_3" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_pawn_3" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="2" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="2" GridPane.rowIndex="6">
                <children>
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="white_pawn_3" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="2" GridPane.rowIndex="7">
                <children>
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="white_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="black_pawn_4" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="2" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="3" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_4" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_pawn_4" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="3" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_king" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_king" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="2" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="4" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="4" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_queen" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_queen" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="5" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="5" />
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="2" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="5" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="5" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="6" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_7" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_pawn_7" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="5" />
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="2" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="6" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_7" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_pawn_7" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="6" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="white_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="7" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_8" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView fx:id="black_pawn_8" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
                </children></StackPane>
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="5" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="6" />
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="2" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="3" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="4" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="5" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="6" >
+                 <children>
+                     <ImageView fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
              <StackPane GridPane.columnIndex="7" GridPane.rowIndex="7">
                <children>
                   <ImageView fx:id="white_rook_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
