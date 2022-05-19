@@ -47,9 +47,9 @@
                </children></StackPane>
             <StackPane GridPane.columnIndex="2">
                <children>
-                  <ImageView fx:id="black_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="black_bishop_1" fitHeight="89.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/test_image_for_figures.png" />
+                        <Image url="@Rook.png" />
                      </image></ImageView>
                </children></StackPane>
             <StackPane GridPane.columnIndex="3">
