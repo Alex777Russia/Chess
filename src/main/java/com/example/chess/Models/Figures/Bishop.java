@@ -20,13 +20,22 @@ public class Bishop implements Figure {
     }
 
     @Override
+    public Color getColor() {
+        return figureColor;
+    }
+
+    @Override
+    public ImageView getFigureModel() {
+        return fieldModel;
+    }
+
+    @Override
     public boolean canMakeMove(int row, int column) {
-        return false;
+        return true;
     }
 
     @Override
     public void makeMove(int row, int column) {
-
     }
 
     @Override

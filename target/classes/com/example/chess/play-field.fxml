@@ -14,212 +14,474 @@
       <GridPane prefHeight="642.0" prefWidth="641.0" StackPane.alignment="CENTER">
 
           <columnConstraints>
-          <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="86.25" prefWidth="86.25" />
-          <ColumnConstraints hgrow="NEVER" maxWidth="91.4" minWidth="80.25" prefWidth="85.4" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="108.80000000000001" minWidth="77.4" prefWidth="87.39999999999998" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="95.80000000000001" minWidth="64.0" prefWidth="84.19999999999999" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="96.40000000000003" minWidth="73.59999999999997" prefWidth="85.80000000000001" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="76.39999999999998" prefWidth="83.39999999999998" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="86.25" prefWidth="86.25" />
-           <ColumnConstraints hgrow="NEVER" maxWidth="86.25" minWidth="86.25" prefWidth="86.25" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
+          <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.4" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.0" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.6" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.80000000000001" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="85.40000000000003" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
+           <ColumnConstraints hgrow="NEVER" maxWidth="96.0" minWidth="70.0" prefWidth="86.0" />
         </columnConstraints>
 
         <rowConstraints>
-          <RowConstraints maxHeight="142.2" minHeight="10.0" prefHeight="87.6" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="136.2" minHeight="10.0" prefHeight="85.4" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="135.0" minHeight="4.199992370605457" prefHeight="85.00000000000003" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="139.60000000000002" minHeight="10.0" prefHeight="86.19999999999999" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="216.19999999999996" minHeight="10.0" prefHeight="86.19999999999999" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="82.20000000000005" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="81.79999999999995" vgrow="SOMETIMES" />
-           <RowConstraints maxHeight="135.0" minHeight="10.0" prefHeight="96.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.59999999999997" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="97.60000000000002" minHeight="10.0" prefHeight="85.0" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="85.80000000000001" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="86.20000000000005" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="84.20000000000005" vgrow="SOMETIMES" />
+           <RowConstraints maxHeight="96.0" minHeight="10.0" prefHeight="88.60000000000002" vgrow="SOMETIMES" />
         </rowConstraints>
 
          <children>
-             <StackPane GridPane.columnIndex="0">
+             <StackPane GridPane.columnIndex="0" GridPane.rowIndex="0">
                <children>
-                  <ImageView fx:id="black_rook_1" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
-               </children></StackPane>
-
-            <StackPane prefHeight="86.0" prefWidth="86.0" GridPane.columnIndex="1">
-               <children>
-                  <ImageView fx:id="black_knight_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
-               </children></StackPane>
-            <StackPane GridPane.columnIndex="2">
-               <children>
-                  <ImageView fx:id="black_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_rook_1" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../images/test_image_for_figures.png" />
+                        <Image url="@../../../images/RookB.png" />
                      </image></ImageView>
                </children></StackPane>
-            <StackPane GridPane.columnIndex="3">
+
+            <StackPane prefHeight="86.0" prefWidth="86.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
                <children>
-                  <ImageView fx:id="black_king" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
-               </children></StackPane>
-             <StackPane GridPane.columnIndex="4">
-               <children>
-                  <ImageView fx:id="black_queen" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
-               </children></StackPane>
-             <StackPane GridPane.columnIndex="5">
-               <children>
-                  <ImageView fx:id="black_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
-               </children></StackPane>
-             <StackPane GridPane.columnIndex="6">
-               <children>
-                  <ImageView fx:id="black_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
-               </children></StackPane>
-             <StackPane GridPane.columnIndex="7">
-               <children>
-                  <ImageView fx:id="black_rook_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_knight_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/KnightB.png" />
+                     </image></ImageView>
                </children></StackPane>
 
-            <StackPane GridPane.rowIndex="1">
+            <StackPane GridPane.columnIndex="2" GridPane.rowIndex="0">
                <children>
-                  <ImageView fx:id="black_pawn_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/BishopB.png" />
+                     </image></ImageView>
                </children></StackPane>
-            <StackPane GridPane.rowIndex="2" />
-             <StackPane GridPane.rowIndex="3" />
-             <StackPane GridPane.rowIndex="4" />
-             <StackPane GridPane.rowIndex="5" />
-             <StackPane GridPane.rowIndex="6">
+
+            <StackPane GridPane.columnIndex="3" GridPane.rowIndex="0">
                <children>
-                  <ImageView fx:id="white_pawn_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_king" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/KingB.png" />
+                     </image></ImageView>
                </children></StackPane>
-             <StackPane GridPane.rowIndex="7">
+
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="0">
                <children>
-                  <ImageView fx:id="white_rook_1" fitHeight="86.0" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_queen" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/QueenB.png" />
+                     </image></ImageView>
+               </children></StackPane>
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="0">
+               <children>
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/BishopB.png" />
+                     </image></ImageView>
+               </children></StackPane>
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="0">
+               <children>
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/KnightB.png" />
+                     </image></ImageView>
+               </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="0">
+               <children>
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_rook_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/RookB.png" />
+                     </image></ImageView>
+               </children></StackPane>
+
+            <StackPane GridPane.rowIndex="1" GridPane.columnIndex="0">
+               <children>
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_1" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
+               </children></StackPane>
+
+            <StackPane GridPane.rowIndex="2" GridPane.columnIndex="0">
+               <children>
+                  <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+               </children></StackPane>
+
+             <StackPane GridPane.rowIndex="3" GridPane.columnIndex="0">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.rowIndex="4" GridPane.columnIndex="0">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.rowIndex="5" GridPane.columnIndex="0">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.rowIndex="6" GridPane.columnIndex="0">
+               <children>
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
+               </children></StackPane>
+
+             <StackPane GridPane.rowIndex="7" GridPane.columnIndex="0">
+               <children>
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_rook_1" fitHeight="86.0" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/RookW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="1" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="1" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_knight_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_knight_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/KnightW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="2" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_3" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_3" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="2">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="3">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="4">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="2" GridPane.rowIndex="5">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="2" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_3" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_3" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="2" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView onMouseClicked="#figureClicked" fx:id="white_bishop_1" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/BishopW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="3" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_4" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_4" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="2">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="3">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="4">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="3" GridPane.rowIndex="5">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="3" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_4" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_4" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="3" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_king" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_king" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/KingW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="4" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
                </children></StackPane>
 
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="5" />
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="2">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="3">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="4">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="4" GridPane.rowIndex="5">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="4" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_5" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="4" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_queen" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_queen" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/QueenW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="5" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
                </children></StackPane>
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="5" />
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="2">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="3">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="4">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="5" GridPane.rowIndex="5">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="5" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_6" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="5" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_bishop_2" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/BishopW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="6" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_7" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_7" fitHeight="86" fitWidth="86" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
                </children></StackPane>
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="5" />
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="2">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="3">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="4">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="6" GridPane.rowIndex="5">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
 
              <StackPane GridPane.columnIndex="6" GridPane.rowIndex="6">
                <children>
-                  <ImageView fx:id="white_pawn_7" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_7" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="6" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="white_knight_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/KnightW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
              <StackPane GridPane.columnIndex="7" GridPane.rowIndex="1">
                <children>
-                  <ImageView fx:id="black_pawn_8" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#figureClicked" fx:id="black_pawn_8" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnB.png" />
+                     </image></ImageView>
                </children></StackPane>
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="2" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="3" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="4" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="5" />
-             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="6" />
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="2">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="3">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="4">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="5">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                 </children></StackPane>
+
+             <StackPane GridPane.columnIndex="7" GridPane.rowIndex="6">
+                 <children>
+                     <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView onMouseClicked="#figureClicked" fx:id="white_pawn_8" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/PawnW.png" />
+                     </image></ImageView>
+                 </children></StackPane>
+
              <StackPane GridPane.columnIndex="7" GridPane.rowIndex="7">
                <children>
-                  <ImageView fx:id="white_rook_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                   <ImageView onMouseClicked="#fieldClicked" fitHeight="86.0" fitWidth="86.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView onMouseClicked="#figureClicked" fx:id="white_rook_2" fitHeight="86" fitWidth="86.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../images/RookW.png" />
+                     </image></ImageView>
                </children></StackPane>
 
          </children>

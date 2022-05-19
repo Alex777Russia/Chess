@@ -9,6 +9,10 @@ public interface Figure {
         BLACK
     }
 
+    public Color getColor();
+
+    public ImageView getFigureModel();
+
     public boolean canMakeMove(int row, int column);
 
     public void makeMove(int row, int column);

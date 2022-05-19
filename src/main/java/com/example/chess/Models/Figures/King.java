@@ -1,23 +1,37 @@
 package com.example.chess.Models.Figures;
 
 import com.example.chess.Models.Figure;
+import javafx.scene.image.ImageView;
 
 public class King implements Figure {
 
-    Color figureColor;
+    public Color figureColor;
+
+    public ImageView fieldModel;
 
     int row;
     int column;
 
-    public King(Color color, int row, int column) {
+    public King(ImageView fieldModel, Color color, int row, int column) {
+        this.fieldModel = fieldModel;
         this.figureColor = color;
         this.row = row;
         this.column = column;
     }
 
     @Override
+    public ImageView getFigureModel() {
+        return fieldModel;
+    }
+
+    @Override
+    public Color getColor() {
+        return figureColor;
+    }
+
+    @Override
     public boolean canMakeMove(int row, int column) {
-        return false;
+        return true;
     }
 
     @Override

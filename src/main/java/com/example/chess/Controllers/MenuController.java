@@ -38,20 +38,22 @@ public class MenuController {
 
     @FXML
     private void startLocalGame(MouseEvent event) throws IOException {
-        startGameScene(event);
+        PlayFieldController playFieldController = startGameScene(event);
 
         Player firstPlayer = new Player();
         Player secondPlayer = new Player();
 
-        PlayFieldController.startGame(firstPlayer, secondPlayer);
+        playFieldController.startGame(firstPlayer, secondPlayer);
     }
 
-    private void startGameScene(MouseEvent event) throws IOException {
-        rootObject = new FXMLLoader(MainApp.class.getResource("play-field.fxml")).load();
+    private PlayFieldController startGameScene(MouseEvent event) throws IOException {
+        FXMLLoader root = new FXMLLoader(MainApp.class.getResource("play-field.fxml"));
+        rootObject = root.load();
         stage = (Stage)(((Node) event.getSource()).getScene().getWindow());
         sceneObject = new Scene(rootObject);
         stage.setScene(sceneObject);
         stage.show();
+        return root.getController();
     }
 
 }
