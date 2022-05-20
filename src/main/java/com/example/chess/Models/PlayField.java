@@ -21,6 +21,8 @@ import java.util.List;
 
 abstract public class PlayField {
 
+    static public ArrayList<ArrayList<Figure>> field = new ArrayList<ArrayList<Figure>>();
+
     static public ArrayList<Figure> playingFigures = new ArrayList<>();
 
     static public ArrayList<Figure> killedBlackFigures;
@@ -36,51 +38,62 @@ abstract public class PlayField {
     static public Figure chosenFigure = null;
 
     static public void initGame(Player firstPlayer, Player secondPlayer, PlayFieldController playFieldController) {
-        // Заполнение игрового поля основными фигурами
-        System.out.println(playFieldController.white_king);
+        // Заполнение контейнера фигур основными фигурами
         Collections.addAll(playingFigures,
-                new King(playFieldController.white_king, Figure.Color.WHITE, 0, 3),
-                new King(playFieldController.black_king, Figure.Color.BLACK, 7, 3),
+                new Rook(playFieldController.black_rook_1, Figure.Color.BLACK, 7, 0, field),
+                new Knight(playFieldController.black_knight_1, Figure.Color.BLACK, 7, 1, field),
+                new Bishop(playFieldController.black_bishop_1, Figure.Color.BLACK, 7, 2, field),
+                new King(playFieldController.black_king, Figure.Color.BLACK, 7, 3, field),
+                new Queen(playFieldController.black_queen, Figure.Color.BLACK, 7, 4, field),
+                new Bishop(playFieldController.black_bishop_2, Figure.Color.BLACK, 7, 5, field),
+                new Knight(playFieldController.black_knight_2, Figure.Color.BLACK, 7, 6, field),
+                new Rook(playFieldController.black_rook_2, Figure.Color.BLACK, 7, 7, field),
 
-                new Queen(playFieldController.white_queen, Figure.Color.WHITE, 0, 4),
-                new Queen(playFieldController.black_queen, Figure.Color.BLACK, 7, 4),
-
-                new Bishop(playFieldController.white_bishop_1, Figure.Color.WHITE, 0, 2),
-                new Bishop(playFieldController.white_bishop_2, Figure.Color.WHITE, 0, 5),
-
-                new Bishop(playFieldController.black_bishop_1, Figure.Color.BLACK, 7, 2),
-                new Bishop(playFieldController.black_bishop_2, Figure.Color.BLACK, 7, 5),
-
-                new Knight(playFieldController.white_knight_1, Figure.Color.WHITE, 0, 1),
-                new Knight(playFieldController.white_knight_2, Figure.Color.WHITE, 0, 6),
-
-                new Knight(playFieldController.black_knight_1, Figure.Color.BLACK, 7, 1),
-                new Knight(playFieldController.black_knight_2, Figure.Color.BLACK, 7, 6),
-
-                new Rook(playFieldController.white_rook_1, Figure.Color.WHITE, 0, 0),
-                new Rook(playFieldController.white_rook_2, Figure.Color.WHITE, 0, 7),
-
-                new Rook(playFieldController.black_rook_1, Figure.Color.BLACK, 7, 0),
-                new Rook(playFieldController.black_rook_2, Figure.Color.BLACK, 7, 7));
+                new Rook(playFieldController.white_rook_1, Figure.Color.WHITE, 0, 0, field),
+                new Knight(playFieldController.white_knight_1, Figure.Color.WHITE, 0, 1, field),
+                new Bishop(playFieldController.white_bishop_1, Figure.Color.WHITE, 0, 2, field),
+                new King(playFieldController.white_king, Figure.Color.WHITE, 0, 3, field),
+                new Queen(playFieldController.white_queen, Figure.Color.WHITE, 0, 4, field),
+                new Bishop(playFieldController.white_bishop_2, Figure.Color.WHITE, 0, 5, field),
+                new Knight(playFieldController.white_knight_2, Figure.Color.WHITE, 0, 6, field),
+                new Rook(playFieldController.white_rook_2, Figure.Color.WHITE, 0, 7, field));
 
         // Инициализация пешек
-        playingFigures.add(new Pawn(playFieldController.black_pawn_1, Figure.Color.BLACK, 1, 0));
-        playingFigures.add(new Pawn(playFieldController.black_pawn_2, Figure.Color.BLACK, 1, 1));
-        playingFigures.add(new Pawn(playFieldController.black_pawn_3, Figure.Color.BLACK, 1, 2));
-        playingFigures.add(new Pawn(playFieldController.black_pawn_4, Figure.Color.BLACK, 1, 3));
-        playingFigures.add(new Pawn(playFieldController.black_pawn_5, Figure.Color.BLACK, 1, 4));
-        playingFigures.add(new Pawn(playFieldController.black_pawn_6, Figure.Color.BLACK, 1, 5));
-        playingFigures.add(new Pawn(playFieldController.black_pawn_7, Figure.Color.BLACK, 1, 6));
-        playingFigures.add(new Pawn(playFieldController.black_pawn_8, Figure.Color.BLACK, 1, 7));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_1, Figure.Color.BLACK, 1, 0, field));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_2, Figure.Color.BLACK, 1, 1, field));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_3, Figure.Color.BLACK, 1, 2, field));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_4, Figure.Color.BLACK, 1, 3, field));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_5, Figure.Color.BLACK, 1, 4, field));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_6, Figure.Color.BLACK, 1, 5, field));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_7, Figure.Color.BLACK, 1, 6, field));
+        playingFigures.add(new Pawn(playFieldController.black_pawn_8, Figure.Color.BLACK, 1, 7, field));
 
-        playingFigures.add(new Pawn(playFieldController.white_pawn_1, Figure.Color.WHITE, 6, 0));
-        playingFigures.add(new Pawn(playFieldController.white_pawn_2, Figure.Color.WHITE, 6, 1));
-        playingFigures.add(new Pawn(playFieldController.white_pawn_3, Figure.Color.WHITE, 6, 2));
-        playingFigures.add(new Pawn(playFieldController.white_pawn_4, Figure.Color.WHITE, 6, 3));
-        playingFigures.add(new Pawn(playFieldController.white_pawn_5, Figure.Color.WHITE, 6, 4));
-        playingFigures.add(new Pawn(playFieldController.white_pawn_6, Figure.Color.WHITE, 6, 5));
-        playingFigures.add(new Pawn(playFieldController.white_pawn_7, Figure.Color.WHITE, 6, 6));
-        playingFigures.add(new Pawn(playFieldController.white_pawn_8, Figure.Color.WHITE, 6, 7));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_1, Figure.Color.WHITE, 6, 0, field));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_2, Figure.Color.WHITE, 6, 1, field));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_3, Figure.Color.WHITE, 6, 2, field));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_4, Figure.Color.WHITE, 6, 3, field));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_5, Figure.Color.WHITE, 6, 4, field));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_6, Figure.Color.WHITE, 6, 5, field));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_7, Figure.Color.WHITE, 6, 6, field));
+        playingFigures.add(new Pawn(playFieldController.white_pawn_8, Figure.Color.WHITE, 6, 7, field));
+
+        // Заполнение игрового поля
+        field.add(new ArrayList<Figure>());
+        field.add(new ArrayList<Figure>());
+        field.add(new ArrayList<Figure>());
+        field.add(new ArrayList<Figure>());
+        field.add(new ArrayList<Figure>());
+        field.add(new ArrayList<Figure>());
+        field.add(new ArrayList<Figure>());
+        field.add(new ArrayList<Figure>());
+        for (int figureIndex = 0; figureIndex < playingFigures.size() / 4; ++figureIndex) {
+
+            field.get(0).add(playingFigures.get(figureIndex));
+            field.get(1).add(playingFigures.get(figureIndex + 16));
+            field.get(6).add(playingFigures.get(figureIndex + 24));
+            field.get(7).add(playingFigures.get(figureIndex + 8));
+        }
+
     }
 
     static public void endGame() {
