@@ -3,7 +3,11 @@ package com.example.chess.Models.Figures;
 import com.example.chess.Models.Figure;
 import javafx.scene.image.ImageView;
 
+import java.util.ArrayList;
+
 public class King implements Figure {
+
+    ArrayList<ArrayList<Figure>> field;
 
     public Color figureColor;
 
@@ -12,11 +16,12 @@ public class King implements Figure {
     int row;
     int column;
 
-    public King(ImageView fieldModel, Color color, int row, int column) {
+    public King(ImageView fieldModel, Color color, int row, int column, ArrayList<ArrayList<Figure>> field) {
         this.fieldModel = fieldModel;
         this.figureColor = color;
         this.row = row;
         this.column = column;
+        this.field = field;
     }
 
     @Override
