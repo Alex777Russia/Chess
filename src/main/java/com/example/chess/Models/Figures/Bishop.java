@@ -2,6 +2,7 @@ package com.example.chess.Models.Figures;
 
 import com.example.chess.Models.Figure;
 import javafx.scene.image.ImageView;
+import javafx.util.Pair;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,11 @@ public class Bishop implements Figure {
         this.row = row;
         this.column = column;
         this.field = field;
+    }
+
+    @Override
+    public Pair<Integer, Integer> getCoordinates() {
+        return new Pair<Integer, Integer>(row, column);
     }
 
     @Override

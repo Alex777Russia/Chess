@@ -1,6 +1,8 @@
 package com.example.chess.Models;
 
 import javafx.scene.image.ImageView;
+import javafx.scene.image.PixelBuffer;
+import javafx.util.Pair;
 
 public interface Figure {
 
@@ -8,6 +10,8 @@ public interface Figure {
         WHITE,
         BLACK
     }
+
+    public Pair<Integer, Integer> getCoordinates();
 
     public Color getColor();
 
