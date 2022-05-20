@@ -48,13 +48,13 @@ public class Rook implements Figure {
         }
 
         if (this.row == row) {
-            for (int i = Math.min(this.column, column); i < Math.max(this.column, column); ++i) {
-                if (field.get(i).get(column) != this && field.get(row).get(i) != null) {
+            for (int i = Math.min(this.column, column); i <= Math.max(this.column, column); ++i) {
+                if (field.get(row).get(i) != this && field.get(row).get(i) != null) {
                     return false;
                 }
             }
         } else if (this.column == column) {
-            for (int i = Math.min(this.row, row); i < Math.max(this.row, row); ++i) {
+            for (int i = Math.min(this.row, row); i <= Math.max(this.row, row); ++i) {
                 if (field.get(i).get(column) != this && field.get(i).get(column) != null) {
                     return false;
                 }
@@ -65,7 +65,8 @@ public class Rook implements Figure {
 
     @Override
     public void makeMove(int row, int column) {
-
+        this.row = row;
+        this.column = column;
     }
 
     @Override
