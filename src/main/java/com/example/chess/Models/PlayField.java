@@ -135,11 +135,16 @@ abstract public class PlayField {
             Pair<Integer, Integer> coordinates = getCellCoordinates(clickedCell);
 
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
+
+                updateField(chosenFigure.getCoordinates().getKey(),
+                        chosenFigure.getCoordinates().getValue(), coordinates.getKey(), coordinates.getValue());
+
                 chosenFigure.makeMove(coordinates.getKey(), coordinates.getValue());
 
                 // Пермещение фигуры в новый StackPane
                 ((StackPane) clickedCell.getParent()).getChildren().add(chosenFigure.getFigureModel());
 
+                // Изменение переменной хода (если ходили белые - ходят черные, и наоборот)
                 whoseMove = chosenFigure.getColor() == Figure.Color.WHITE ? Figure.Color.BLACK : Figure.Color.WHITE;
             }
 
@@ -154,6 +159,12 @@ abstract public class PlayField {
         return new Pair<>(GridPane.getRowIndex(clickedCell.getParent()),
                 GridPane.getColumnIndex(clickedCell.getParent()));
 
+    }
+
+    static private void updateField(int previousRow, int previousColumn, int newRow, int newColumn) {
+        field.get(newRow).add(newColumn, field.get(previousRow).get(previousColumn));
+
+        field.get(previousRow).add(previousColumn, null);
     }
 
     // Метод для нахождения объекта фигуры из списка по id из верстки
