@@ -3,8 +3,12 @@ package com.example.chess.Models.Figures;
 import com.example.chess.Models.Figure;
 import javafx.scene.image.ImageView;
 
+import java.util.ArrayList;
+
 
 public class Pawn implements Figure {
+
+    ArrayList<ArrayList<Figure>> field;
 
     Color figureColor;
 
@@ -13,11 +17,12 @@ public class Pawn implements Figure {
     int row;
     int column;
 
-    public Pawn(ImageView fieldModel, Color color, int row, int column) {
+    public Pawn(ImageView fieldModel, Color color, int row, int column, ArrayList<ArrayList<Figure>> field) {
         this.fieldModel = fieldModel;
         this.figureColor = color;
         this.row = row;
         this.column = column;
+        this.field = field;
     }
 
     @Override
@@ -32,7 +37,26 @@ public class Pawn implements Figure {
 
     @Override
     public boolean canMakeMove(int row, int column) {
-        return true;
+        if (this.column == column) {
+            if (this.figureColor == Color.WHITE && this.row - row > 0) {
+                if (this.row == 6) {
+                    if ((this.row - row <= 2) && (this.field.get())) {
+                        return true;
+                    }
+                } else if ((this.row - row == 1) && ()) {
+                    return true;
+                }
+            } else if (this.figureColor == Color.BLACK && row - this.row > 0) {
+                if (this.row == 1) {
+                    if ((row - this.row <= 2) && ()) {
+                        return true;
+                    }
+                } else if ((row - this.row == 1) && ()) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     @Override
