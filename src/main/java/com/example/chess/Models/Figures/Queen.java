@@ -41,7 +41,8 @@ public class Queen implements Figure {
 
     @Override
     public void makeMove(int row, int column) {
-
+        this.row = row;
+        this.column = column;
     }
 
     @Override
