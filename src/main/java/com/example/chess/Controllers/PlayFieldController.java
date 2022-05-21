@@ -1,11 +1,16 @@
 package com.example.chess.Controllers;
 
+import com.example.chess.Models.Figure;
 import com.example.chess.Models.PlayField;
 import com.example.chess.Models.Player;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PlayFieldController {
@@ -115,7 +120,9 @@ public class PlayFieldController {
     private void figureClicked(MouseEvent event) {
         ImageView clickedFigure = (ImageView) event.getSource();
 
-        PlayField.figureInFocus(clickedFigure.idProperty().getValueSafe());
+        if (PlayField.figureInFocus(clickedFigure.idProperty().getValueSafe())) {
+            getStage(clickedFigure).setTitle("\"" + clickedFigure.getId() + "\" chosen");
+        };
     }
 
     @FXML
@@ -126,8 +133,13 @@ public class PlayFieldController {
 
     }
 
-    void startGame(Player firstPlayer, Player secondPlayer) {
+    protected void startGame(Player firstPlayer, Player secondPlayer) {
         PlayField.initGame(firstPlayer, secondPlayer, this);
     }
+
+    private Stage getStage(Node node) {
+        return (Stage) node.getScene().getWindow();
+    }
+
 
 }

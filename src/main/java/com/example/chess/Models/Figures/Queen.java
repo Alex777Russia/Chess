@@ -42,64 +42,56 @@ public class Queen implements Figure {
 
     @Override
     public boolean canMakeMove(int row, int column) {
-        if (this.row == row && this.column != column) {
-            if (this.column - column > 0) {
-                for (int i = column + 1; i < this.column; ++i) {
-                    if (this.field.get(row).get(i) != null) {
-                        return false;
-                    }
-                }
-            } else {
-                for (int i = this.column + 1; i < column; ++i) {
-                    if (this.field.get(row).get(i) != null) {
-                        return false;
-                    }
+        if (this.row == row) {
+            for (int i = Math.min(this.column, column); i <= Math.max(this.column, column); ++i) {
+                if (field.get(row).get(i) != this && field.get(row).get(i) != null) {
+                    return false;
                 }
             }
             return true;
-        } else if (this.column == column && this.row != row) {
-            if (this.row - row > 0) {
-                for (int i = row; i < this.row; ++i) {
-                    if (this.field.get(i).get(row) != null) {
-                        return false;
-                    }
+        } else if (this.column == column) {
+            for (int i = Math.min(this.row, row); i <= Math.max(this.row, row); ++i) {
+                if (field.get(i).get(column) != this && field.get(i).get(column) != null) {
+                    return false;
                 }
-            } else {
+            }
+            return true;
+        } else if (Math.abs(this.column - column) == Math.abs(this.row - row)) {
+            if (row > this.row && column > this.column) {
                 for (int i = this.row; i < row; ++i) {
-                    if (this.field.get(i).get(row) != null) {
+                    if (field.get(i + 1).get(this.column + (i - this.row) + 1) != null) {
                         return false;
                     }
                 }
+                return true;
             }
-            return true;
-        } else if (this.row - row == this.column - column && this.row - row > 0) {
-           for (int i = 0; i < this.row - row - 1; ++i) {
-               if (this.field.get(row + i).get(column + i) != null) {
-                   return false;
-               }
-           }
-           return true;
-        } else if (this.row - row == this.column - column && this.row - row < 0) {
-            for (int i = 0; i < row - this.row - 1; ++i) {
-                if (this.field.get(this.row + i).get(this.column + i) != null) {
-                    return false;
+
+            if (row > this.row && column < this.column) {
+                for (int i = this.row; i < row; ++i) {
+                    if (field.get(i + 1).get(this.column - (i - this.row) - 1) != null) {
+                        return false;
+                    }
                 }
+                return true;
             }
-            return true;
-        } else if (this.row - row == column - this.column && this.row - row > 0) {
-            for (int i = 0; i < this.row - row - 1; ++i) {
-                if (this.field.get(row + i).get(this.column + i) != null) {
-                    return false;
+
+            if (row < this.row && column > this.column) {
+                for (int i = 0; i < column - this.column; ++i) {
+                    if (field.get(this.row - i - 1).get(this.column + i + 1) != null) {
+                        return false;
+                    }
                 }
+                return true;
             }
-            return true;
-        } else if (this.row - row == column - this.column && this.row - row < 0) {
-            for (int i = 0; i < row - this.row - 1; ++i) {
-                if (this.field.get(this.row + i).get(column + i) != null) {
-                    return false;
+
+            if (row < this.row && column < this.column) {
+                for (int i = row; i < this.row; ++i) {
+                    if (field.get(i).get(column - row + i) != null) {
+                        return false;
+                    }
                 }
+                return true;
             }
-            return true;
         }
         return false;
     }

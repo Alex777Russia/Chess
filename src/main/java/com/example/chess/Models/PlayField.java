@@ -112,18 +112,21 @@ abstract public class PlayField {
     }
 
     // Вызывается при нажатии на фигуру. Устанавливает фокус на нее. Также тут надо доделать механику убийства фигур
-    static public void figureInFocus(String newFigureId) {
+    static public boolean figureInFocus(String newFigureId) {
         Figure newFigure = findFigureById(newFigureId);
 
         if (chosenFigure == null) {
             chosenFigure = newFigure;
             whoseMove = newFigure.getColor();
-            return;
+            return true;
         }
 
-        if (newFigure.getColor() == newFigure.getColor()) {
+        if (whoseMove == newFigure.getColor()) {
             chosenFigure = newFigure;
+            return true;
         }
+
+        return false;
 
     }
 
@@ -146,6 +149,8 @@ abstract public class PlayField {
 
                 // Изменение переменной хода (если ходили белые - ходят черные, и наоборот)
                 whoseMove = chosenFigure.getColor() == Figure.Color.WHITE ? Figure.Color.BLACK : Figure.Color.WHITE;
+
+                printField();
             }
 
         }
@@ -155,17 +160,17 @@ abstract public class PlayField {
 
     // Метод для получения координат кликнутой клетки
     static private Pair<Integer, Integer> getCellCoordinates(ImageView clickedCell) {
-        System.out.println(GridPane.getRowIndex(clickedCell.getParent()));
-        System.out.println(GridPane.getColumnIndex(clickedCell.getParent()));
+//        System.out.println(GridPane.getRowIndex(clickedCell.getParent()));
+//        System.out.println(GridPane.getColumnIndex(clickedCell.getParent()));
         return new Pair<>(GridPane.getRowIndex(clickedCell.getParent()),
                 GridPane.getColumnIndex(clickedCell.getParent()));
 
     }
 
     static private void updateField(int previousRow, int previousColumn, int newRow, int newColumn) {
-        field.get(newRow).add(newColumn, field.get(previousRow).get(previousColumn));
+        field.get(newRow).set(newColumn, field.get(previousRow).get(previousColumn));
 
-        field.get(previousRow).add(previousColumn, null);
+        field.get(previousRow).set(previousColumn, null);
     }
 
     // Метод для нахождения объекта фигуры из списка по id из верстки
@@ -176,6 +181,18 @@ abstract public class PlayField {
             }
         }
         return null;
+    }
+
+    static private void printField() {
+        for (ArrayList<Figure> row : field) {
+            for (Figure figure : row) {
+                System.out.print(figure != null ? figure.getColor() + " " : "null ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
 }
