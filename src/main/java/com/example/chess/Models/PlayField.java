@@ -112,18 +112,21 @@ abstract public class PlayField {
     }
 
     // Вызывается при нажатии на фигуру. Устанавливает фокус на нее. Также тут надо доделать механику убийства фигур
-    static public void figureInFocus(String newFigureId) {
+    static public boolean figureInFocus(String newFigureId) {
         Figure newFigure = findFigureById(newFigureId);
 
         if (chosenFigure == null) {
             chosenFigure = newFigure;
             whoseMove = newFigure.getColor();
-            return;
+            return true;
         }
 
-        if (newFigure.getColor() == newFigure.getColor()) {
+        if (whoseMove == newFigure.getColor()) {
             chosenFigure = newFigure;
+            return true;
         }
+
+        return false;
 
     }
 
@@ -154,8 +157,8 @@ abstract public class PlayField {
 
     // Метод для получения координат кликнутой клетки
     static private Pair<Integer, Integer> getCellCoordinates(ImageView clickedCell) {
-        System.out.println(GridPane.getRowIndex(clickedCell.getParent()));
-        System.out.println(GridPane.getColumnIndex(clickedCell.getParent()));
+//        System.out.println(GridPane.getRowIndex(clickedCell.getParent()));
+//        System.out.println(GridPane.getColumnIndex(clickedCell.getParent()));
         return new Pair<>(GridPane.getRowIndex(clickedCell.getParent()),
                 GridPane.getColumnIndex(clickedCell.getParent()));
 
