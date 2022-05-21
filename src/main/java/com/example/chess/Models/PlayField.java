@@ -153,6 +153,7 @@ abstract public class PlayField {
 
         }
 
+
     }
 
     // Метод для получения координат кликнутой клетки

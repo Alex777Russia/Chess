@@ -42,12 +42,17 @@ public class Knight implements Figure {
 
     @Override
     public boolean canMakeMove(int row, int column) {
-        return true;
+        if ((Math.abs(this.row - row) == 2 && Math.abs(this.column - column) == 1) ||
+                (Math.abs(this.column - column) == 2 && Math.abs(this.row - row) == 1)) {
+            return true;
+        }
+        return false;
     }
 
     @Override
     public void makeMove(int row, int column) {
-
+        this.row = row;
+        this.column = column;
     }
 
     @Override
