@@ -149,6 +149,8 @@ abstract public class PlayField {
 
                 // Изменение переменной хода (если ходили белые - ходят черные, и наоборот)
                 whoseMove = chosenFigure.getColor() == Figure.Color.WHITE ? Figure.Color.BLACK : Figure.Color.WHITE;
+
+                printField();
             }
 
         }
@@ -166,9 +168,9 @@ abstract public class PlayField {
     }
 
     static private void updateField(int previousRow, int previousColumn, int newRow, int newColumn) {
-        field.get(newRow).add(newColumn, field.get(previousRow).get(previousColumn));
+        field.get(newRow).set(newColumn, field.get(previousRow).get(previousColumn));
 
-        field.get(previousRow).add(previousColumn, null);
+        field.get(previousRow).set(previousColumn, null);
     }
 
     // Метод для нахождения объекта фигуры из списка по id из верстки
@@ -179,6 +181,18 @@ abstract public class PlayField {
             }
         }
         return null;
+    }
+
+    static private void printField() {
+        for (ArrayList<Figure> row : field) {
+            for (Figure figure : row) {
+                System.out.print(figure != null ? figure.getColor() + " " : "null ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
     }
 
 }
