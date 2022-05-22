@@ -41,7 +41,13 @@ public class King implements Figure {
     }
 
     @Override
-    public boolean canMakeMove(int row, int column) { return true; }
+    public boolean canMakeMove(int row, int column) {
+        if (Math.abs(this.row - row) <= 1 && Math.abs(this.column - column) <= 1) {
+            return true;
+        }
+
+        return false;
+    }
 
     @Override
     public void makeMove(int row, int column) {

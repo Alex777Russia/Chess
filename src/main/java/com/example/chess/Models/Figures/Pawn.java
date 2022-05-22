@@ -61,10 +61,8 @@ public class Pawn implements Figure {
                     return true;
                 }
             }
-        } else if (Math.abs(this.column - column) == 1 && this.field.get(row).get(column) != null) {
-            if (this.figureColor != this.field.get(row).get(column).getColor() && Math.abs(this.row - row) == 1) {
+        } else if (Math.abs(this.column - column) == 1 && this.field.get(row).get(column) != null && Math.abs(this.row - row) == 1) {
                 return true;
-            }
         }
 
         return false;
