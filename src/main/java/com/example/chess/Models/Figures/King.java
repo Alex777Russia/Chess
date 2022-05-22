@@ -49,8 +49,4 @@ public class King implements Figure {
         this.column = column;
     }
 
-    @Override
-    public void kill() {
-
-    }
 }

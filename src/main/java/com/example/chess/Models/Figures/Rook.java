@@ -68,9 +68,4 @@ public class Rook implements Figure {
         this.row = row;
         this.column = column;
     }
-
-    @Override
-    public void kill() {
-
-    }
 }

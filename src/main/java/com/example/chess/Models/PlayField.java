@@ -12,6 +12,7 @@ import javafx.css.SizeUnits;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.paint.Color;
 import javafx.util.Pair;
 
 import java.util.ArrayList;
@@ -25,9 +26,9 @@ abstract public class PlayField {
 
     static public ArrayList<Figure> playingFigures = new ArrayList<>();
 
-    static public ArrayList<Figure> killedBlackFigures;
+    static public ArrayList<Figure> killedBlackFigures = new ArrayList<>();
 
-    static public ArrayList<Figure> killedWhiteFigures;
+    static public ArrayList<Figure> killedWhiteFigures = new ArrayList<>();
 
     static public Player whitePlayer;
 
@@ -108,6 +109,24 @@ abstract public class PlayField {
     }
 
     static public boolean isCheck() {
+
+        // Ищем короля цвета текущего хода
+        Figure king = null;
+        for (Figure figure : playingFigures) {
+            if (figure.getColor() == whoseMove && figure.getClass() == King.class) {
+                king = figure;
+                break;
+            }
+        }
+
+        // Проверяем, под боем ли он
+        for (Figure figure : playingFigures) {
+            if (figure.getColor() != whoseMove && figure.canMakeMove(king.getCoordinates().getKey(),
+                    king.getCoordinates().getValue())) {
+                return true;
+            }
+        }
+
         return false;
     }
 
@@ -124,6 +143,24 @@ abstract public class PlayField {
         if (whoseMove == newFigure.getColor()) {
             chosenFigure = newFigure;
             return true;
+        } else {
+
+
+            // В этом блоке обработка возможного убийства
+            Pair<Integer, Integer> coordinates = getCellCoordinates(newFigure.getFigureModel());
+
+            // Делаем ячейку null для корректной работы метода canMakeMove (да, да это костыль, он самый, но так проще)
+            field.get(coordinates.getKey()).set(coordinates.getValue(), null);
+            if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
+                kill(newFigure);
+                StackPane parentNode = (StackPane) (newFigure.getFigureModel().getParent());
+                parentNode.getChildren().remove(newFigure.getFigureModel());
+                moveTo((ImageView) parentNode.getChildren().get(0));
+            } else {
+                // Возращаем фигуру назад, в противном случае
+                field.get(coordinates.getKey()).set(coordinates.getValue(), newFigure);
+            }
+
         }
 
         return false;
@@ -154,8 +191,15 @@ abstract public class PlayField {
             }
 
         }
+    }
 
-
+    static private void kill(Figure figureToKill) {
+        playingFigures.removeIf(figure -> figure == figureToKill);
+        if (figureToKill.getColor() == Figure.Color.WHITE) {
+            killedWhiteFigures.add(figureToKill);
+        } else {
+            killedBlackFigures.add(figureToKill);
+        }
     }
 
     // Метод для получения координат кликнутой клетки
@@ -194,5 +238,6 @@ abstract public class PlayField {
         System.out.println();
         System.out.println();
     }
+
 
 }

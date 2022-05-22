@@ -102,8 +102,4 @@ public class Queen implements Figure {
         this.column = column;
     }
 
-    @Override
-    public void kill() {
-
-    }
 }
