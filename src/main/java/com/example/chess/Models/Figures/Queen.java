@@ -42,7 +42,58 @@ public class Queen implements Figure {
 
     @Override
     public boolean canMakeMove(int row, int column) {
-        return true;
+        if (this.row == row) {
+            for (int i = Math.min(this.column, column); i <= Math.max(this.column, column); ++i) {
+                if (field.get(row).get(i) != this && field.get(row).get(i) != null) {
+                    return false;
+                }
+            }
+            return true;
+        } else if (this.column == column) {
+            for (int i = Math.min(this.row, row); i <= Math.max(this.row, row); ++i) {
+                if (field.get(i).get(column) != this && field.get(i).get(column) != null) {
+                    return false;
+                }
+            }
+            return true;
+        } else if (Math.abs(this.column - column) == Math.abs(this.row - row)) {
+            if (row > this.row && column > this.column) {
+                for (int i = this.row; i < row; ++i) {
+                    if (field.get(i + 1).get(this.column + (i - this.row) + 1) != null) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            if (row > this.row && column < this.column) {
+                for (int i = this.row; i < row; ++i) {
+                    if (field.get(i + 1).get(this.column - (i - this.row) - 1) != null) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            if (row < this.row && column > this.column) {
+                for (int i = 0; i < column - this.column; ++i) {
+                    if (field.get(this.row - i - 1).get(this.column + i + 1) != null) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            if (row < this.row && column < this.column) {
+                for (int i = row; i < this.row; ++i) {
+                    if (field.get(i).get(column - row + i) != null) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
@@ -51,8 +102,4 @@ public class Queen implements Figure {
         this.column = column;
     }
 
-    @Override
-    public void kill() {
-
-    }
 }

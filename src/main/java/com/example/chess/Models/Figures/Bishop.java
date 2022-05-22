@@ -63,11 +63,8 @@ public class Bishop implements Figure {
         }
 
         if (row < this.row && column > this.column) {
-            for (int i = this.column; i < column; ++i) {
-                System.out.println(this.row - (column - this.column));
-                System.out.println(i + 1);
-                System.out.println();
-                if (field.get(this.row - (column - this.column) - 1).get(i + 1) != null) {
+            for (int i = 0; i < column - this.column; ++i) {
+                if (field.get(this.row - i - 1).get(this.column + i + 1) != null) {
                     return false;
                 }
             }
@@ -75,20 +72,12 @@ public class Bishop implements Figure {
 
         if (row < this.row && column < this.column) {
             for (int i = row; i < this.row; ++i) {
-                System.out.println(i);
-                System.out.println(column - (i - row));
-                System.out.println();
-                if (field.get(i).get(column - (i - row)) != null) {
+                if (field.get(i).get(column - row + i) != null) {
                     return false;
                 }
             }
         }
 
-
-
-
-
-        // Дописать пересечения
         return true;
     }
 
@@ -96,10 +85,5 @@ public class Bishop implements Figure {
     public void makeMove(int row, int column) {
         this.row = row;
         this.column = column;
-    }
-
-    @Override
-    public void kill() {
-
     }
 }

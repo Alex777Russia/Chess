@@ -1,7 +1,6 @@
 package com.example.chess.Models;
 
 import javafx.scene.image.ImageView;
-import javafx.scene.image.PixelBuffer;
 import javafx.util.Pair;
 
 public interface Figure {
@@ -21,5 +20,4 @@ public interface Figure {
 
     public void makeMove(int row, int column);
 
-    public void kill();
 }
