@@ -54,7 +54,7 @@ public class Pawn implements Figure {
                 }
             } else if (this.figureColor == Color.BLACK && row - this.row > 0) {
                 if (this.row == 1) {
-                    if ((row - this.row <= 2) && (this.field.get(3).get(column) == null)) {
+                    if ((row - this.row <= 2) && (this.field.get(2).get(column) == null)) {
                         return true;
                     }
                 } else if (row - this.row == 1) {
