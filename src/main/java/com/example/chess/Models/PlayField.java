@@ -150,15 +150,11 @@ abstract public class PlayField {
             Pair<Integer, Integer> coordinates = getCellCoordinates(newFigure.getFigureModel());
 
             // Делаем ячейку null для корректной работы метода canMakeMove (да, да это костыль, он самый, но так проще)
-            field.get(coordinates.getKey()).set(coordinates.getValue(), null);
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
                 kill(newFigure);
                 StackPane parentNode = (StackPane) (newFigure.getFigureModel().getParent());
                 parentNode.getChildren().remove(newFigure.getFigureModel());
                 moveTo((ImageView) parentNode.getChildren().get(0));
-            } else {
-                // Возращаем фигуру назад, в противном случае
-                field.get(coordinates.getKey()).set(coordinates.getValue(), newFigure);
             }
 
         }
