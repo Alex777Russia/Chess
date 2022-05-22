@@ -131,19 +131,14 @@ abstract public class PlayField {
 
             // В этом блоке обработка возможного убийства
             Pair<Integer, Integer> coordinates = getCellCoordinates(newFigure.getFigureModel());
-            // Делаем ячейку null для корректной работы метода canMakeMove (да, да это костыль, он самый, но так проще)
-            // Этот косяк надо поправить в методе canMakeMove для королевы, ладьи и слона
-            // и здесь потом убрать, ибо это треш.
-            field.get(coordinates.getKey()).set(coordinates.getValue(), null);
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
                 StackPane parentNode = (StackPane) (newFigure.getFigureModel().getParent());
 
                 String resultOfMove = moveTo((ImageView) parentNode.getChildren().get(0));
                 parentNode.getChildren().remove(newFigure.getFigureModel());
+                moveTo((ImageView) parentNode.getChildren().get(0));
+
                 kill(newFigure);
-            } else {
-                // Возращаем фигуру назад, в противном случае
-                field.get(coordinates.getKey()).set(coordinates.getValue(), newFigure);
             }
 
         }
