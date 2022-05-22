@@ -47,7 +47,7 @@ public class Bishop implements Figure {
         }
 
         if (row > this.row && column > this.column) {
-            for (int i = this.row; i < row; ++i) {
+            for (int i = this.row; i < row - 1; ++i) {
                 if (field.get(i + 1).get(this.column + (i - this.row) + 1) != null) {
                     return false;
                 }
@@ -55,7 +55,7 @@ public class Bishop implements Figure {
         }
 
         if (row > this.row && column < this.column) {
-            for (int i = this.row; i < row; ++i) {
+            for (int i = this.row; i < row - 1; ++i) {
                 if (field.get(i + 1).get(this.column - (i - this.row) - 1) != null) {
                     return false;
                 }
@@ -63,7 +63,7 @@ public class Bishop implements Figure {
         }
 
         if (row < this.row && column > this.column) {
-            for (int i = 0; i < column - this.column; ++i) {
+            for (int i = 0; i < column - this.column - 1; ++i) {
                 if (field.get(this.row - i - 1).get(this.column + i + 1) != null) {
                     return false;
                 }
@@ -71,8 +71,8 @@ public class Bishop implements Figure {
         }
 
         if (row < this.row && column < this.column) {
-            for (int i = row; i < this.row; ++i) {
-                if (field.get(i).get(column - row + i) != null) {
+            for (int i = row; i < this.row - 1; ++i) {
+                if (field.get(i + 1).get(column - row + i + 1) != null) {
                     return false;
                 }
             }
