@@ -48,15 +48,31 @@ public class Rook implements Figure {
         }
 
         if (this.row == row) {
-            for (int i = Math.min(this.column, column); i < Math.max(this.column, column) - 1; ++i) {
-                if (field.get(row).get(i) != this && field.get(row).get(i) != null) {
-                    return false;
+            if (this.column > column) {
+                for (int i = column + 1; i < this.column; ++i) {
+                    if (field.get(row).get(i) != null) {
+                        return false;
+                    }
+                }
+            } else {
+                for (int i = this.column + 1; i < column; ++i) {
+                    if (field.get(row).get(i) != null) {
+                        return false;
+                    }
                 }
             }
-        } else if (this.column == column) {
-            for (int i = Math.min(this.row, row); i < Math.max(this.row, row) - 1; ++i) {
-                if (field.get(i).get(column) != this && field.get(i).get(column) != null) {
-                    return false;
+        } else {
+            if (this.row > row) {
+                for (int i = row; i < this.row; ++i) {
+                    if (field.get(i).get(column) != null) {
+                        return false;
+                    }
+                }
+            } else {
+                for (int i = this.row + 1; i < row; ++i) {
+                    if (field.get(i).get(column) != null) {
+                        return false;
+                    }
                 }
             }
         }
