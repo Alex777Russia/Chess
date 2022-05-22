@@ -77,7 +77,6 @@ public class Bishop implements Figure {
                 }
             }
         }
-
         return true;
     }
 

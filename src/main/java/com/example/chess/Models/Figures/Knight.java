@@ -46,6 +46,7 @@ public class Knight implements Figure {
                 (Math.abs(this.column - column) == 2 && Math.abs(this.row - row) == 1)) {
             return true;
         }
+
         return false;
     }
 

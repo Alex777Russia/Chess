@@ -42,6 +42,7 @@ public class Queen implements Figure {
 
     @Override
     public boolean canMakeMove(int row, int column) {
+<<<<<<< HEAD
         if (this.column == column || this.row == row) {
             if (this.row == row) {
                 if (this.column > column) {
@@ -56,6 +57,13 @@ public class Queen implements Figure {
                             return false;
                         }
                     }
+=======
+
+        if (this.row == row) {
+            for (int i = Math.min(this.column, column); i <= Math.max(this.column, column); ++i) {
+                if (field.get(row).get(i) != this && field.get(row).get(i) != null) {
+                    return false;
+>>>>>>> 8f0a3aeb4f7ff98b256a1b56329d5617f6db2e93
                 }
             } else {
                 if (this.row > row) {
