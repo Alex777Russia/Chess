@@ -38,6 +38,8 @@ abstract public class PlayField {
 
     static public Figure chosenFigure = null;
 
+    static public boolean checkState = false;
+
     static public void initGame(Player firstPlayer, Player secondPlayer, PlayFieldController playFieldController) {
         // Заполнение контейнера фигур основными фигурами
         Collections.addAll(playingFigures,
@@ -108,36 +110,18 @@ abstract public class PlayField {
         return false;
     }
 
-    static public boolean isCheck() {
-
-        // Ищем короля цвета текущего хода
-        Figure king = null;
-        for (Figure figure : playingFigures) {
-            if (figure.getColor() == whoseMove && figure.getClass() == King.class) {
-                king = figure;
-                break;
-            }
-        }
-
-        // Проверяем, под боем ли он
-        for (Figure figure : playingFigures) {
-            if (figure.getColor() != whoseMove && figure.canMakeMove(king.getCoordinates().getKey(),
-                    king.getCoordinates().getValue())) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     // Вызывается при нажатии на фигуру. Устанавливает фокус на нее. Также тут надо доделать механику убийства фигур
     static public boolean figureInFocus(String newFigureId) {
         Figure newFigure = findFigureById(newFigureId);
 
-        if (chosenFigure == null) {
+        if (chosenFigure == null && whoseMove == null) {
             chosenFigure = newFigure;
             whoseMove = newFigure.getColor();
             return true;
+        }
+
+        if (chosenFigure == null && newFigure.getColor() != whoseMove) {
+            return false;
         }
 
         if (whoseMove == newFigure.getColor()) {
@@ -145,36 +129,43 @@ abstract public class PlayField {
             return true;
         } else {
 
-
             // В этом блоке обработка возможного убийства
             Pair<Integer, Integer> coordinates = getCellCoordinates(newFigure.getFigureModel());
-
             // Делаем ячейку null для корректной работы метода canMakeMove (да, да это костыль, он самый, но так проще)
+            // Этот косяк надо поправить в методе canMakeMove для королевы, ладьи и слона
+            // и здесь потом убрать, ибо это треш.
             field.get(coordinates.getKey()).set(coordinates.getValue(), null);
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
-                kill(newFigure);
                 StackPane parentNode = (StackPane) (newFigure.getFigureModel().getParent());
+
+                String resultOfMove = moveTo((ImageView) parentNode.getChildren().get(0));
                 parentNode.getChildren().remove(newFigure.getFigureModel());
-                moveTo((ImageView) parentNode.getChildren().get(0));
+                kill(newFigure);
             } else {
                 // Возращаем фигуру назад, в противном случае
                 field.get(coordinates.getKey()).set(coordinates.getValue(), newFigure);
             }
 
         }
-
         return false;
 
     }
 
     // Главный регулирующий метод хода. Вызывает метод проверки возможности хода для каждой фигуры и меняет UI.
-    static public void moveTo(ImageView clickedCell) {
+    static public String moveTo(ImageView clickedCell) {
 
         if (chosenFigure != null && chosenFigure.getColor() == whoseMove) {
 
             Pair<Integer, Integer> coordinates = getCellCoordinates(clickedCell);
 
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
+
+//                // Проверяем, допустим ли ход, если уже есть шах
+//                if (checkState && isStillCheckAfterMove(coordinates.getKey(), coordinates.getValue())) {
+//                    return "Still check";
+//                } else {
+//                    checkState = false;
+//                }
 
                 updateField(chosenFigure.getCoordinates().getKey(),
                         chosenFigure.getCoordinates().getValue(), coordinates.getKey(), coordinates.getValue());
@@ -187,10 +178,20 @@ abstract public class PlayField {
                 // Изменение переменной хода (если ходили белые - ходят черные, и наоборот)
                 whoseMove = chosenFigure.getColor() == Figure.Color.WHITE ? Figure.Color.BLACK : Figure.Color.WHITE;
 
+                // Отладночная функция печати поля в консоль
                 printField();
-            }
 
+                chosenFigure = null;
+
+//                // Если после хода - шах - как-то об этом заявляем
+//                if (isCheck()) {
+//                    checkState = true;
+//                    return "Шах - " + whoseMove;
+//                }
+            }
         }
+
+        return null;
     }
 
     static private void kill(Figure figureToKill) {
@@ -225,6 +226,45 @@ abstract public class PlayField {
             }
         }
         return null;
+    }
+
+    static private boolean isCheck() {
+
+        // Ищем короля цвета текущего хода
+        Figure king = null;
+        for (Figure figure : playingFigures) {
+            if (figure.getColor() == whoseMove && figure.getClass() == King.class) {
+                king = figure;
+                break;
+            }
+        }
+
+        // Проверяем, под боем ли он
+        for (Figure figure : playingFigures) {
+            if (figure.getColor() != whoseMove && figure.canMakeMove(king.getCoordinates().getKey(),
+                    king.getCoordinates().getValue())) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    static private boolean isStillCheckAfterMove(int row, int column) {
+
+        // Моделируем ход
+        Pair<Integer, Integer> oldCoordinates = chosenFigure.getCoordinates();
+
+        chosenFigure.makeMove(row, column);
+
+        // Проверяем на шах
+        if (isCheck()) {
+            chosenFigure.makeMove(oldCoordinates.getKey(), oldCoordinates.getKey());
+            return true;
+        }
+
+        chosenFigure.makeMove(oldCoordinates.getKey(), oldCoordinates.getKey());
+        return false;
     }
 
     static private void printField() {

@@ -129,7 +129,10 @@ public class PlayFieldController {
     private void fieldClicked(MouseEvent event) {
         ImageView clickedCell = (ImageView) event.getSource();
 
-        PlayField.moveTo(clickedCell);
+        String resultOfMove = PlayField.moveTo(clickedCell);
+         if (resultOfMove != null) {
+             getStage(clickedCell).setTitle(resultOfMove);
+         }
 
     }
 

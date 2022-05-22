@@ -42,6 +42,7 @@ public class Queen implements Figure {
 
     @Override
     public boolean canMakeMove(int row, int column) {
+
         if (this.row == row) {
             for (int i = Math.min(this.column, column); i <= Math.max(this.column, column); ++i) {
                 if (field.get(row).get(i) != this && field.get(row).get(i) != null) {
