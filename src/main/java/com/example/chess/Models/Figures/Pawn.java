@@ -43,7 +43,7 @@ public class Pawn implements Figure {
 
     @Override
     public boolean canMakeMove(int row, int column) {
-        if (this.column == column) {
+        if (this.column == column && this.field.get(row).get(column) == null) {
             if (this.figureColor == Color.WHITE && this.row - row > 0) {
                 if (this.row == 6) {
                     if ((this.row - row <= 2) && (this.field.get(5).get(column) == null)) {
@@ -61,7 +61,12 @@ public class Pawn implements Figure {
                     return true;
                 }
             }
+        } else if (Math.abs(this.column - column) == 1 && this.field.get(row).get(column) != null) {
+            if (this.figureColor != this.field.get(row).get(column).getColor() && Math.abs(this.row - row) == 1) {
+                return true;
+            }
         }
+
         return false;
     }
 
