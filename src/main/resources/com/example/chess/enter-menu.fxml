@@ -12,7 +12,7 @@
       </image></ImageView>
    <AnchorPane prefHeight="406.0" prefWidth="726.0">
       <children>
-         <RadioButton layoutX="620.0" layoutY="30.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="  Volume" textAlignment="CENTER">
+         <RadioButton onMouseClicked="#RadioButtonSwitch" layoutX="620.0" layoutY="30.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="87.0" text="  Volume" textAlignment="CENTER" fx:id="volumeButton">
             <font>
                <Font name="Times New Roman" size="15.0" />
             </font></RadioButton>
