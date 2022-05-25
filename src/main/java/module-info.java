@@ -1,7 +1,7 @@
 module com.example.chess {
     requires javafx.controls;
     requires javafx.fxml;
-
+    requires javafx.media;
 
     opens com.example.chess to javafx.fxml;
     exports com.example.chess;
