@@ -131,6 +131,7 @@ abstract public class PlayField {
 
             // В этом блоке обработка возможного убийства
             Pair<Integer, Integer> coordinates = getCellCoordinates(newFigure.getFigureModel());
+            System.out.println(chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue()));
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
                 StackPane parentNode = (StackPane) (newFigure.getFigureModel().getParent());
 
@@ -139,8 +140,8 @@ abstract public class PlayField {
                 moveTo((ImageView) parentNode.getChildren().get(0));
 
                 kill(newFigure);
-            }
 
+            }
         }
         return false;
 
