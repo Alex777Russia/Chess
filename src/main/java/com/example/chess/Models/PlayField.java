@@ -22,6 +22,8 @@ import java.util.List;
 
 abstract public class PlayField {
 
+    static public final String checkStateMassage = "Still check";
+
     static public ArrayList<ArrayList<Figure>> field = new ArrayList<ArrayList<Figure>>();
 
     static public ArrayList<Figure> playingFigures = new ArrayList<>();
@@ -110,39 +112,48 @@ abstract public class PlayField {
         return false;
     }
 
-    // Вызывается при нажатии на фигуру. Устанавливает фокус на нее. Также тут надо доделать механику убийства фигур
+    // Вызывается при нажатии на фигуру
     static public boolean figureInFocus(String newFigureId) {
         Figure newFigure = findFigureById(newFigureId);
 
+        // Если фигура не выбрана и не выбран первый ходящий игрок
         if (chosenFigure == null && whoseMove == null) {
             chosenFigure = newFigure;
             whoseMove = newFigure.getColor();
             return true;
         }
 
+        // Если пытаешься взять в фокус фигуру не своего цвета
         if (chosenFigure == null && newFigure.getColor() != whoseMove) {
             return false;
         }
 
+        // Если выбираешь фигуру своего цвета
         if (whoseMove == newFigure.getColor()) {
             chosenFigure = newFigure;
             return true;
-        } else {
+        }
 
+        // Если пытаешься убить фигуру
+        if (whoseMove != newFigure.getColor()) {
             // В этом блоке обработка возможного убийства
             Pair<Integer, Integer> coordinates = getCellCoordinates(newFigure.getFigureModel());
-            System.out.println(chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue()));
+
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
                 StackPane parentNode = (StackPane) (newFigure.getFigureModel().getParent());
 
                 String resultOfMove = moveTo((ImageView) parentNode.getChildren().get(0));
-                parentNode.getChildren().remove(newFigure.getFigureModel());
-                moveTo((ImageView) parentNode.getChildren().get(0));
 
-                kill(newFigure);
+                if (checkState && !resultOfMove.equals(checkStateMassage)) {
+                    kill(newFigure);
+                    parentNode.getChildren().remove(newFigure.getFigureModel());
+                } else {
+                    undoKill(newFigure);
+                }
 
             }
         }
+
         return false;
 
     }
@@ -156,12 +167,12 @@ abstract public class PlayField {
 
             if (chosenFigure.canMakeMove(coordinates.getKey(), coordinates.getValue())) {
 
-//                // Проверяем, допустим ли ход, если уже есть шах
-//                if (checkState && isStillCheckAfterMove(coordinates.getKey(), coordinates.getValue())) {
-//                    return "Still check";
-//                } else {
-//                    checkState = false;
-//                }
+                // Проверяем, допустим ли ход, если уже есть шах
+                if (checkState && isStillCheckAfterMove(coordinates.getKey(), coordinates.getValue())) {
+                    return checkStateMassage;
+                } else {
+                    checkState = false;
+                }
 
                 updateField(chosenFigure.getCoordinates().getKey(),
                         chosenFigure.getCoordinates().getValue(), coordinates.getKey(), coordinates.getValue());
@@ -179,14 +190,13 @@ abstract public class PlayField {
 
                 chosenFigure = null;
 
-//                // Если после хода - шах - как-то об этом заявляем
-//                if (isCheck()) {
-//                    checkState = true;
-//                    return "Шах - " + whoseMove;
-//                }
+                // Если после хода - шах - как-то об этом заявляем
+                if (isCheck()) {
+                    checkState = true;
+                    return "Шах - " + whoseMove;
+                }
             }
         }
-
         return null;
     }
 
@@ -196,6 +206,16 @@ abstract public class PlayField {
             killedWhiteFigures.add(figureToKill);
         } else {
             killedBlackFigures.add(figureToKill);
+        }
+    }
+
+    static private void undoKill(Figure figureToRestore) {
+        field.get(figureToRestore.getCoordinates().getKey()).set(figureToRestore.getCoordinates().getValue(),
+                figureToRestore);
+        if (figureToRestore.getColor() == Figure.Color.WHITE) {
+            killedWhiteFigures.removeIf(figure -> figure == figureToRestore);
+        } else {
+            killedBlackFigures.removeIf(figure -> figure == figureToRestore);
         }
     }
 
@@ -247,11 +267,13 @@ abstract public class PlayField {
     }
 
     static private boolean isStillCheckAfterMove(int row, int column) {
-
+        printField();
         // Моделируем ход
         Pair<Integer, Integer> oldCoordinates = chosenFigure.getCoordinates();
 
         chosenFigure.makeMove(row, column);
+
+        updateField(oldCoordinates.getKey(), oldCoordinates.getValue(), row, column);
 
         // Проверяем на шах
         if (isCheck()) {
