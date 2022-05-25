@@ -1,15 +1,23 @@
 package com.example.chess.Controllers;
 
+import com.example.chess.MainApp;
 import com.example.chess.Models.PlayField;
 import com.example.chess.Models.Player;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 
 public class PlayFieldController {
+    @FXML
+    public ImageView exitImage;
 
     // Черные фигуры
 
@@ -131,6 +139,19 @@ public class PlayFieldController {
              getStage(clickedCell).setTitle(resultOfMove);
          }
 
+    }
+
+    @FXML
+    private void onExitClicked(MouseEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("enter-menu.fxml"));
+        Stage stage = new Stage();
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
+        stage.setTitle("Just Chess");
+        stage.getIcons().add(new Image("icon.png"));
+
+        stage.setScene(scene);
+        stage.show();
     }
 
     protected void startGame(Player firstPlayer, Player secondPlayer) {

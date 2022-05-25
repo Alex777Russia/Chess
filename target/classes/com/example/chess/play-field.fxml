@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <StackPane prefHeight="784.0" prefWidth="784.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.chess.Controllers.PlayFieldController">
    <children>
-
-      <ImageView fitHeight="784.0" fitWidth="784.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../images/play_field.png" />
-         </image></ImageView>
-
-      <Button mnemonicParsing="false" prefHeight="10.0" prefWidth="50.0" text="Exit" StackPane.alignment="TOP_LEFT">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font></Button>
-
+       <ImageView fitHeight="784.0" fitWidth="784.0" pickOnBounds="true" preserveRatio="true">
+           <image>
+               <Image url="@../../../images/play_field.png" />
+           </image></ImageView>
+       <ImageView fitHeight="45.0" fitWidth="45.0" onMouseClicked="#onExitClicked" pickOnBounds="true" preserveRatio="true" StackPane.alignment="TOP_LEFT">
+           <image>
+               <Image url="@../../../images/Return_4.png" />
+           </image></ImageView>
       <GridPane prefHeight="642.0" prefWidth="641.0" StackPane.alignment="CENTER">
 
           <columnConstraints>
