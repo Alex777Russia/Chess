@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class MainApp extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("enter-menu.fxml"));
@@ -19,10 +20,6 @@ public class MainApp extends Application {
 
         stage.setTitle("Just Chess");
         stage.getIcons().add(new Image("icon.png"));
-
-        Media sound = new Media(getClass().getResource("/sounds/MenuSong1.mp3").toExternalForm());
-        MediaPlayer mediaPlayer = new MediaPlayer(sound);
-        mediaPlayer.play();
 
         stage.setScene(scene);
         stage.show();
