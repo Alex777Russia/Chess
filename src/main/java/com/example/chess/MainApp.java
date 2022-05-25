@@ -13,9 +13,9 @@ public class MainApp extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainApp.class.getResource("enter-menu.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
+        stage.setResizable(false);
         stage.setTitle("Just Chess");
         stage.getIcons().add(new Image("file::src/main/resources/images/icon.png"));
-        //stage.getIcons().add(new Image(<yourclassname>.class.getResourceAsStream("icon.png")));
         stage.setScene(scene);
         stage.show();
     }
