@@ -1,17 +1,13 @@
 package com.example.chess.Controllers;
 
-import com.example.chess.Models.Figure;
 import com.example.chess.Models.PlayField;
 import com.example.chess.Models.Player;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
-import java.util.List;
 
 public class PlayFieldController {
 
@@ -118,6 +114,7 @@ public class PlayFieldController {
 
     @FXML
     private void figureClicked(MouseEvent event) {
+
         ImageView clickedFigure = (ImageView) event.getSource();
 
         if (PlayField.figureInFocus(clickedFigure.idProperty().getValueSafe())) {

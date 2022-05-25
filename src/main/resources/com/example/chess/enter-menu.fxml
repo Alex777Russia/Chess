@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
@@ -16,7 +17,7 @@
             <font>
                <Font name="Times New Roman" size="15.0" />
             </font></RadioButton>
-         <Button layoutX="315.0" layoutY="335.0" onMouseClicked="#startLocalGame" mnemonicParsing="false" prefHeight="29.0" prefWidth="105.0" text="Start match" textAlignment="CENTER">
+         <Button layoutX="315.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#startLocalGame" prefHeight="29.0" prefWidth="105.0" text="Start match" textAlignment="CENTER">
             <font>
                <Font name="Times New Roman" size="15.0" />
             </font></Button>

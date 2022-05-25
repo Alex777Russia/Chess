@@ -143,12 +143,12 @@ abstract public class PlayField {
                 StackPane parentNode = (StackPane) (newFigure.getFigureModel().getParent());
 
                 String resultOfMove = moveTo((ImageView) parentNode.getChildren().get(0));
+                kill(newFigure);
 
-                if (checkState && !resultOfMove.equals(checkStateMassage)) {
-                    kill(newFigure);
-                    parentNode.getChildren().remove(newFigure.getFigureModel());
-                } else {
+                if (checkState && resultOfMove.equals(checkStateMassage)) {
                     undoKill(newFigure);
+                } else {
+                    parentNode.getChildren().remove(newFigure.getFigureModel());
                 }
 
             }
@@ -259,6 +259,8 @@ abstract public class PlayField {
         for (Figure figure : playingFigures) {
             if (figure.getColor() != whoseMove && figure.canMakeMove(king.getCoordinates().getKey(),
                     king.getCoordinates().getValue())) {
+                System.out.println(figure);
+                System.out.println(playingFigures);
                 return true;
             }
         }
@@ -267,16 +269,27 @@ abstract public class PlayField {
     }
 
     static private boolean isStillCheckAfterMove(int row, int column) {
-        printField();
         // Моделируем ход
         Pair<Integer, Integer> oldCoordinates = chosenFigure.getCoordinates();
 
         chosenFigure.makeMove(row, column);
 
-        updateField(oldCoordinates.getKey(), oldCoordinates.getValue(), row, column);
+        Figure figureToDelete = field.get(row).get(column) != null ? field.get(row).get(column) : null;
 
+        playingFigures.removeIf(figure -> figure == figureToDelete);
+
+        updateField(oldCoordinates.getKey(), oldCoordinates.getValue(), row, column);
         // Проверяем на шах
         if (isCheck()) {
+            updateField(row, column, oldCoordinates.getKey(), oldCoordinates.getValue());
+            if (figureToDelete != null) {
+                playingFigures.add(figureToDelete);
+            }
+            updateField(row, column, oldCoordinates.getKey(), oldCoordinates.getValue());
+            if (figureToDelete != null) {
+                playingFigures.add(figureToDelete);
+            }
+
             chosenFigure.makeMove(oldCoordinates.getKey(), oldCoordinates.getKey());
             return true;
         }
