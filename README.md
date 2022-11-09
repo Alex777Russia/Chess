@@ -1,10 +1,11 @@
 # Chess
 
-НОВЫЕ ТАСКИ ПОДЪЕХАЛИ.
+## Graduate project of the 2nd semester of IU-1 in the discipline GUI applications
 
-Так, сейчас я написала механизм для свободного хода фигур. ПОэтому надо:
+# Developers:
+  - Romanov Maxim (https://github.com/koldun8010)
+  - Repin Pavel (https://github.com/thxtomslf)
+  - Shevchenko Alexey (https://github.com/Alex777Russia)
 
-1. Для каждой фигуры реализовать методы canMakeMove и makeMove(этот элементарный, такой же как у Pawn). Учитывать, что в ячейке уже может быть фигура - не надо. Просто надо проверить допустим ли ход, исходя из манеры поведения фигуры.
-2. Это в общем и есть главная таска сейчас.
-3. Разбираем!
-4. Я тут накодил немало, поэтому без обид, я возьму себе только слона. Остальное поделите сами.
+# Mentor:
+  - Nikolaev Artem (https://github.com/nicepeopleproject)
