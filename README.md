@@ -5,6 +5,8 @@
 # Developers:
   - Romanov Maxim (https://github.com/koldun8010)
   - Repin Pavel (https://github.com/thxtomslf)
+  
+#### TeamLead
   - Shevchenko Alexey (https://github.com/Alex777Russia)
 
 # Mentor:
