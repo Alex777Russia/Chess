@@ -10,7 +10,9 @@
 -----
 ### Menu
 -----
+
 ![](/src/main/resources/images/menu.gif)
+
 ```java
 @Override
     public void start(Stage stage) throws IOException {
@@ -27,6 +29,11 @@
 -----
 ### Initial Local Game
 -----
+
+<p align="center">
+  <img src="preview_Game_Chess.gif" alt="animated" />
+</p>
+
 ```java
 @FXML
     private void startLocalGame(MouseEvent event) throws IOException {
@@ -41,6 +48,7 @@
 -----
 ### Figure
 -----
+
 ```java
 
 public interface Figure {
@@ -65,7 +73,9 @@ public interface Figure {
 Figure Black | ![](src/main/resources/images/KingB.png) | ![](src/main/resources/images/QueenB.png) | ![](src/main/resources/images/KnightB.png) | ![](src/main/resources/images/BishopB.png) | ![](src/main/resources/images/RookB.png) | ![](src/main/resources/images/PawnB.png)
 ----- | ----- | ----- | ----- |----- |----- |-----
 Figure White | ![](src/main/resources/images/KingW.png) | ![](src/main/resources/images/QueenW.png) | ![](src/main/resources/images/KnightW.png) | ![](src/main/resources/images/BishopW.png) | ![](src/main/resources/images/RookW.png) | ![](src/main/resources/images/PawnW.png)
+
 -----
+
 # Developers:
   - Romanov Maxim (https://github.com/koldun8010)
   - Repin Pavel (https://github.com/thxtomslf)
